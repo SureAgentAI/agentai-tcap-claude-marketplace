@@ -1,0 +1,43 @@
+#!/bin/bash
+# Pre-commit hook for agentai-marketplace
+# Validates JSON syntax/structure and version synchronization
+#
+# Install: git config core.hooksPath .githooks
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+echo "Running pre-commit validations..."
+echo "================================="
+echo ""
+
+exit_code=0
+
+# 1. Validate JSON structure
+echo "[1/2] JSON Structure Validation"
+echo "-------------------------------"
+if ! "$REPO_ROOT/scripts/validate-json.sh"; then
+    exit_code=1
+fi
+echo ""
+
+# 2. Validate version synchronization
+echo "[2/2] Version Synchronization"
+echo "-----------------------------"
+if ! "$REPO_ROOT/scripts/validate-versions.sh"; then
+    exit_code=1
+fi
+echo ""
+
+echo "================================="
+if [[ $exit_code -eq 0 ]]; then
+    echo "All validations passed!"
+else
+    echo "Validation failed. Fix the issues above before committing."
+    echo ""
+    echo "To bypass (not recommended): git commit --no-verify"
+fi
+
+exit $exit_code

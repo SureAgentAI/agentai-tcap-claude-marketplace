@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://agentai.com/schemas/marketplace.schema.json",
+  "title": "Claude Code Marketplace",
+  "description": "Schema for Claude Code plugin marketplace configuration",
+  "type": "object",
+  "required": ["$schema", "name", "version", "owner", "plugins"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference"
+    },
+    "name": {
+      "type": "string",
+      "description": "Marketplace identifier (used in @marketplace syntax)",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "version": {
+      "type": "string",
+      "description": "Marketplace version (semver)",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable marketplace description"
+    },
+    "owner": {
+      "type": "object",
+      "description": "Marketplace owner information",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Owner name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Contact email"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Owner website"
+        }
+      }
+    },
+    "plugins": {
+      "type": "array",
+      "description": "List of plugins in this marketplace",
+      "items": {
+        "$ref": "#/definitions/pluginEntry"
+      }
+    }
+  },
+  "definitions": {
+    "pluginEntry": {
+      "type": "object",
+      "required": ["name", "description", "version", "author", "source"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Plugin identifier",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "description": {
+          "type": "string",
+          "description": "What this plugin provides"
+        },
+        "version": {
+          "type": "string",
+          "description": "Plugin version (must match plugin.json)",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "author": {
+          "type": "object",
+          "required": ["name"],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            }
+          }
+        },
+        "source": {
+          "type": "string",
+          "description": "Relative path to plugin directory",
+          "pattern": "^\\./plugins/[a-z][a-z0-9-]*$"
+        },
+        "category": {
+          "type": "string",
+          "description": "Plugin category",
+          "enum": ["standards", "productivity", "domain", "workflow", "tools"]
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Search keywords for plugin discovery"
+        },
+        "deprecated": {
+          "type": "boolean",
+          "description": "Whether this plugin is deprecated"
+        },
+        "deprecationMessage": {
+          "type": "string",
+          "description": "Message shown when plugin is deprecated"
+        },
+        "minClaudeVersion": {
+          "type": "string",
+          "description": "Minimum Claude Code version required"
+        }
+      }
+    }
+  }
+}

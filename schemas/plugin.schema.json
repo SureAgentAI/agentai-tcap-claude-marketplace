@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://agentai.com/schemas/plugin.schema.json",
+  "title": "Claude Code Plugin",
+  "description": "Schema for Claude Code plugin configuration (plugin.json)",
+  "type": "object",
+  "required": ["name", "description", "version", "author"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Plugin identifier (must match directory name and marketplace entry)",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of what this plugin provides"
+    },
+    "version": {
+      "type": "string",
+      "description": "Plugin version in semver format (must match marketplace.json)",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "author": {
+      "type": "object",
+      "description": "Plugin author information (MUST be object, not string)",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Author name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Author contact email"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Author website"
+        }
+      }
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX license identifier"
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri",
+      "description": "Source code repository URL"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Search keywords"
+    },
+    "dependencies": {
+      "type": "object",
+      "description": "Other plugins this plugin depends on",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^\\d+\\.\\d+\\.\\d+$"
+      }
+    }
+  }
+}
