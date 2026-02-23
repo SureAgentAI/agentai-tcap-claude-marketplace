@@ -1,0 +1,9 @@
+{
+  "name": "daily-briefing",
+  "description": "Morning briefing — aggregate calendar, email, and news into an actionable daily summary",
+  "version": "1.0.0",
+  "author": { "name": "AgentAI" },
+  "dependencies": {
+    "workspace-mcp": "1.0.0"
+  }
+}

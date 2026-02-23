@@ -1,0 +1,14 @@
+{
+  "google-workspace": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "google-workspace-mcp@latest",
+      "serve"
+    ],
+    "env": {
+      "GOOGLE_OAUTH_CLIENT_ID": "{{env.GOOGLE_OAUTH_CLIENT_ID}}",
+      "GOOGLE_OAUTH_CLIENT_SECRET": "{{env.GOOGLE_OAUTH_CLIENT_SECRET}}"
+    }
+  }
+}

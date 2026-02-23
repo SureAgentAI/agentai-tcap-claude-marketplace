@@ -1,0 +1,6 @@
+{
+  "name": "workspace-mcp",
+  "description": "Google and Outlook workspace integration — Gmail, Calendar, Drive via MCP servers",
+  "version": "1.0.0",
+  "author": { "name": "AgentAI" }
+}
