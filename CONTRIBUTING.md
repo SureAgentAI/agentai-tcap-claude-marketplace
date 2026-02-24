@@ -115,8 +115,8 @@ Run validations manually anytime:
 After pushing, verify your changes work by installing the marketplace in a Claude Code session:
 
 ```
-/plugin marketplace add https://github.com/SureAgentAI/agentai-marketplace
-/plugin update <plugin>@agentai-marketplace
+/plugin marketplace add https://github.com/SureAgentAI/agentai-tcap-claude-marketplace
+/plugin update <plugin>@agentai-tcap
 ```
 
 Then confirm your changes appear (new command shows up, skill is available, etc).

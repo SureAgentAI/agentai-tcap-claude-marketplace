@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/marketplace.schema.json",
-  "name": "agentai",
+  "name": "agentai-tcap",
   "version": "1.0.0",
-  "description": "AgentAI Claude Code plugin marketplace — turnkey AI workflows for teams",
+  "description": "AgentAI x Transformation Capital — AI-powered tools for deal intelligence",
   "owner": {
     "name": "AgentAI",
     "email": "dev@agentai.app",

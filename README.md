@@ -1,53 +1,103 @@
-# AgentAI Marketplace
+<p align="center">
+  <a href="https://agentai.app"><img src="assets/agentai-logo.svg" alt="AgentAI" height="60"></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&times;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://transformcap.com"><img src="assets/transformcap-logo.svg" alt="Transformation Capital" height="60"></a>
+</p>
 
-**Turnkey Claude Code plugins for teams — install once, use everywhere.**
-
-A curated plugin marketplace for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Each plugin adds specialized capabilities to your Claude terminal — portfolio intelligence, presentation creation, daily briefings, and more. Designed for investment teams but useful for any professional workflow.
+<h1 align="center">AgentAI x Transformation Capital</h1>
+<p align="center"><strong>AI-Powered Tools for Deal Intelligence</strong></p>
+<p align="center">
+  <a href="https://tc-teachin.vercel.app">AI Lunch Slides</a> &bull;
+  <a href="https://hotlist.agentai.biz">Hot List Live Demo</a> &bull;
+  <a href="#getting-started-in-under-5-minutes">Get Started</a>
+</p>
 
 ---
 
-## Quick Install
+A curated [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin marketplace purpose-built for investment teams. Each plugin adds specialized capabilities to your Claude terminal — portfolio intelligence, presentation creation, daily briefings, and more.
 
-### Method 1 — Ask Claude
+---
+
+## What's Inside
+
+### 1. Hot List Dashboard
+
+Live portfolio company intelligence — **34 companies**, **$718M total funding**, **1,229 open roles** tracked and enriched automatically.
+
+| Capability | How |
+|-----------|-----|
+| View the hot list | `/hotlist` |
+| Enrich with latest data | `/hotlist enrich` |
+| Export to CSV | `/hotlist export` |
+| Live dashboard | [hotlist.agentai.biz](https://hotlist.agentai.biz) |
+
+### 2. Claude Code Skills
+
+| Plugin | What You Get | Commands |
+|--------|-------------|----------|
+| **planner** | Structured planning — brainstorm ideas, evaluate approaches, produce plans | `/plan [topic]` |
+| **slides** | Branded HTML presentations from scratch, outline, or PowerPoint | `/new-presentation`, `/slide-check`, `/convert-pptx` |
+| **daily-briefing** | Morning summary — calendar, email highlights, action items | `/briefing [today/tomorrow/week]` |
+
+### 3. Google Workspace Integration
+
+The **workspace-mcp** plugin auto-loads MCP servers for Gmail, Google Calendar, and Google Drive. Once connected, other plugins like **daily-briefing** pull your email and calendar data automatically.
+
+---
+
+## Getting Started in Under 5 Minutes
+
+### Step 1 — Install Claude Code
+
+Download from [Anthropic](https://docs.anthropic.com/en/docs/claude-code) and run the installer.
+
+### Step 2 — Install the Marketplace
 
 Open Claude Code and type:
 
-> Install the AgentAI marketplace from https://github.com/SureAgentAI/agentai-marketplace
+> Install the AgentAI marketplace from https://github.com/SureAgentAI/agentai-tcap-claude-marketplace
 
-Claude will handle the rest.
-
-### Method 2 — CLI Commands
+Claude will handle the rest. Or use CLI commands:
 
 ```
-/plugin marketplace add SureAgentAI/agentai-marketplace
-/plugin install slides@agentai
+/plugin marketplace add SureAgentAI/agentai-tcap-claude-marketplace
+/plugin install slides@agentai-tcap
 ```
 
-### Method 3 — Manual Configuration
+<details>
+<summary>Manual configuration (advanced)</summary>
 
 Add the following to your `~/.claude/settings.json`:
 
 ```json
 {
   "extraKnownMarketplaces": {
-    "agentai": {
+    "agentai-tcap": {
       "source": {
         "source": "github",
-        "repo": "SureAgentAI/agentai-marketplace"
+        "repo": "SureAgentAI/agentai-tcap-claude-marketplace"
       }
     }
   },
   "enabledPlugins": {
-    "hotlist@agentai": true,
-    "slides@agentai": true,
-    "planner@agentai": true,
-    "daily-briefing@agentai": true,
-    "workspace-mcp@agentai": true
+    "hotlist@agentai-tcap": true,
+    "slides@agentai-tcap": true,
+    "planner@agentai-tcap": true,
+    "daily-briefing@agentai-tcap": true,
+    "workspace-mcp@agentai-tcap": true
   }
 }
 ```
 
-You can enable all five plugins or just the ones you need.
+</details>
+
+### Step 3 — Connect Google & Run Your First Briefing
+
+```
+/briefing
+```
+
+Claude walks you through Google OAuth on first use. After that, your daily briefing pulls calendar, email, and priorities automatically.
 
 ---
 
@@ -187,13 +237,13 @@ After enabling the plugin, Claude will walk you through credential setup on firs
 Update the marketplace and all installed plugins:
 
 ```
-/plugin marketplace update agentai
-/plugin update slides@agentai
+/plugin marketplace update agentai-tcap
+/plugin update slides@agentai-tcap
 ```
 
 Or simply ask Claude:
 
-> Update my AgentAI plugins
+> Update my plugins
 
 ---
 
@@ -202,18 +252,14 @@ Or simply ask Claude:
 You do not need to install everything. Pick what you need:
 
 ```
-/plugin install planner@agentai
+/plugin install planner@agentai-tcap
 ```
 
 To see what is available:
 
 ```
-/plugin list agentai
+/plugin list agentai-tcap
 ```
-
-Or ask Claude:
-
-> What plugins are available from AgentAI?
 
 ---
 
