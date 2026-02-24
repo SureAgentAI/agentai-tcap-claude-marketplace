@@ -2,7 +2,5 @@
   "name": "slides",
   "description": "Create stunning branded presentations — from scratch, outline, or PowerPoint. Zero-dependency HTML output.",
   "version": "1.0.0",
-  "author": {
-    "name": "AgentAI Team"
-  }
+  "author": { "name": "Sacha Brahami" }
 }

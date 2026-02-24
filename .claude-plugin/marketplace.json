@@ -13,7 +13,7 @@
       "name": "hotlist",
       "description": "Hot List Dashboard — enrich, rank, and export portfolio company intelligence",
       "version": "1.0.0",
-      "author": { "name": "AgentAI" },
+      "author": { "name": "Zorik Gordon" },
       "source": "./plugins/hotlist",
       "category": "domain",
       "keywords": ["hotlist", "dashboard", "enrichment", "portfolio", "vc"]
@@ -22,7 +22,7 @@
       "name": "slides",
       "description": "Create stunning branded presentations — from scratch, outline, or PowerPoint. Zero-dependency HTML output.",
       "version": "1.0.0",
-      "author": { "name": "AgentAI" },
+      "author": { "name": "Sacha Brahami" },
       "source": "./plugins/slides",
       "category": "productivity",
       "keywords": ["slides", "presentation", "deck", "powerpoint", "html"]
@@ -31,7 +31,7 @@
       "name": "planner",
       "description": "Structured planning workflow — brainstorm ideas, evaluate approaches, produce actionable plans",
       "version": "1.0.0",
-      "author": { "name": "AgentAI" },
+      "author": { "name": "Zorik Gordon" },
       "source": "./plugins/planner",
       "category": "productivity",
       "keywords": ["plan", "brainstorm", "strategy", "workflow"]
