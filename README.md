@@ -37,11 +37,11 @@ Live portfolio company intelligence — **34 companies**, **$718M total funding*
 |--------|-------------|----------|
 | **planner** | Structured planning — brainstorm ideas, evaluate approaches, produce plans | `/plan [topic]` |
 | **slides** | Branded HTML presentations from scratch, outline, or PowerPoint | `/new-presentation`, `/slide-check`, `/convert-pptx` |
-| **daily-briefing** | Morning summary — calendar, email highlights, action items | `/briefing [today/tomorrow/week]` |
+| **daily-briefing** | Morning summary — calendar, email, Google Chat, draft responses | `/briefing [today/tomorrow/week]` |
 
 ### 3. Google Workspace Integration
 
-The **workspace-mcp** plugin auto-loads MCP servers for Gmail, Google Calendar, and Google Drive. Once connected, other plugins like **daily-briefing** pull your email and calendar data automatically.
+The **daily-briefing** plugin includes a setup guide that walks you through connecting Gmail, Google Calendar, and Google Chat via a Google Workspace MCP server. Once connected, your briefing pulls email, calendar, and chat data automatically.
 
 ---
 
@@ -84,7 +84,6 @@ Add the following to your `~/.claude/settings.json`:
     "slides@agentai-tcap": true,
     "planner@agentai-tcap": true,
     "daily-briefing@agentai-tcap": true,
-    "workspace-mcp@agentai-tcap": true
   }
 }
 ```
@@ -108,8 +107,7 @@ Claude walks you through Google OAuth on first use. After that, your daily brief
 | **hotlist** | Portfolio company intelligence dashboard — enrichment, ranking, CSV export | `/hotlist`, `/hotlist enrich`, `/hotlist export` |
 | **slides** | Branded HTML presentations from scratch, outline, or PowerPoint | `/new-presentation`, `/slide-check`, `/convert-pptx`, `/export-pdf` |
 | **planner** | Structured planning — brainstorm ideas, evaluate approaches, produce plans | `/plan [topic]` |
-| **daily-briefing** | Morning summary — calendar, email highlights, action items | `/briefing [today/tomorrow/week]` |
-| **workspace-mcp** | Google & Outlook integration — auto-loads Gmail, Calendar, Drive MCP servers | *(auto-loads on enable)* |
+| **daily-briefing** | Morning summary — calendar, email, Google Chat, draft responses | `/briefing [today/tomorrow/week]` |
 
 ---
 
@@ -187,11 +185,14 @@ Guides you through a structured planning workflow: brainstorm options, evaluate 
 
 ### Requirements
 
-- **workspace-mcp** plugin must be installed and configured first (see below)
+- Google Workspace MCP server (setup guide included with the plugin)
+- Google Cloud project with OAuth credentials for Gmail, Calendar, and Chat APIs
 
 ### How It Works
 
-Aggregates your calendar, email, and priorities into a concise daily summary. Highlights meetings, action items, and anything that needs attention.
+Aggregates your calendar, email, Google Chat messages, and priorities into a concise daily summary. Highlights meetings, action items, and anything that needs attention. Optionally drafts email responses in your communication style using a style profile.
+
+The plugin includes a step-by-step setup guide that walks you through installing the Google Workspace MCP server and authenticating with Google.
 
 ### Quick Start
 
@@ -200,24 +201,6 @@ Aggregates your calendar, email, and priorities into a concise daily summary. Hi
 /briefing tomorrow    # Preview tomorrow
 /briefing week        # Weekly overview
 ```
-
-</details>
-
-<details>
-<summary><strong>workspace-mcp</strong> — Google & Outlook Integration</summary>
-
-### Requirements
-
-- Google Cloud project with OAuth credentials (for Gmail, Calendar, Drive access)
-- Follow the workspace-setup skill guide included with the plugin
-
-### How It Works
-
-When enabled, this plugin auto-loads MCP servers for Gmail, Google Calendar, and Google Drive. Other plugins like **daily-briefing** depend on it for email and calendar access.
-
-### Quick Start
-
-After enabling the plugin, Claude will walk you through credential setup on first use. Once configured, Gmail, Calendar, and Drive are available in every Claude Code session automatically.
 
 </details>
 

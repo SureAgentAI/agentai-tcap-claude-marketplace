@@ -38,21 +38,12 @@
     },
     {
       "name": "daily-briefing",
-      "description": "Morning briefing — aggregate calendar, email, and news into an actionable daily summary",
-      "version": "1.0.0",
-      "author": { "name": "AgentAI" },
+      "description": "Morning briefing — calendar, email, Google Chat, action items, and draft responses",
+      "version": "1.1.0",
+      "author": { "name": "Michael Gorodetsky" },
       "source": "./plugins/daily-briefing",
       "category": "productivity",
-      "keywords": ["briefing", "morning", "email", "calendar", "summary"]
-    },
-    {
-      "name": "workspace-mcp",
-      "description": "Google and Outlook workspace integration — Gmail, Calendar, Drive via MCP servers",
-      "version": "1.0.0",
-      "author": { "name": "AgentAI" },
-      "source": "./plugins/workspace-mcp",
-      "category": "tools",
-      "keywords": ["google", "outlook", "gmail", "calendar", "mcp", "workspace"]
+      "keywords": ["briefing", "morning", "email", "calendar", "chat", "summary"]
     }
   ]
 }
